@@ -1,0 +1,13 @@
+pragma solidity ^0.4.18;
+
+contract JobHunt {
+    string hunter;
+    
+    function JobHunt(string _hunter) public {
+        hunter = _hunter;
+    }
+    
+    function getHunter() public view returns (string) {
+        return hunter;
+    }
+}
