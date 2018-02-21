@@ -3,7 +3,13 @@ pragma solidity ^0.4.18;
 contract JobHunt {
     string hunter;
     
-    function JobHunt(string _hunter) public {
+    modifier firstHunter() {
+        bytes memory tempEmptyStringTest = bytes(hunter); 
+        require(tempEmptyStringTest.length == 0);
+        _;
+    }
+    
+    function setHunter(string _hunter) public firstHunter {
         hunter = _hunter;
     }
     
